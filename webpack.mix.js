@@ -13,7 +13,7 @@ mix.browserSync({
 });
 
 // mix adds tailwind, preprocesses sass, combines css, purges css and bundles/polyfills js
-// outputs two files in the dist folder, which are enqueued in the function.php
+// outputs two files in the dist folder, which are enqueued in the functions.php
 mix
   .js("src/js/app.js", "dist/")
   .sass("src/css/app.scss", "dist/")
