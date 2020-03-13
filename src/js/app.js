@@ -1,3 +1,5 @@
+import "lazysizes";
+
 // base namespace (use unique name for each project)
 var base = base || {};
 
