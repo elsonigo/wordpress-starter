@@ -1,0 +1,17 @@
+
+/* hide plus icon menu in admin bar
+#wp-admin-bar-new-content {
+	display:none;
+}
+*/
+
+
+/* tablet + desktop */
+@media only screen and (min-width: 800px) {
+	
+	/* remove space above editor if visual+text mode is enabled
+	.wp-editor-tools {
+		margin-top: -2.5em;
+	}
+	*/
+}

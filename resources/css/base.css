@@ -1,0 +1,161 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, main, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* custom reset */
+input, button, select, textarea {
+	margin: 0;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+input[type="text"],
+input[type="password"],
+textarea, 
+button {
+	padding: 0.8em 1.5em;
+	border: 0px;
+	border-radius: 4px;
+}
+
+button {
+	background-color: #222;
+	color: #fff;
+}
+
+button:hover {
+	background-color: black;
+	cursor:pointer;
+}
+
+input[type="checkbox"] {
+	width: 24px;
+	height: 24px;
+	display:inline-block;
+	margin-right: 0.5em;
+}
+
+input, textarea, select {
+	margin-bottom: 1em;
+}
+
+label {
+	display:inline-block;
+	vertical-align: 0.5em;
+	margin-bottom: 1em;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+i, em {
+	font-style: italic;
+}
+
+u {
+	text-decoration:none;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+h1,
+h2,
+h3,
+p,
+blockquote,
+ul {
+	margin-bottom: 1em;
+}
+
+body,
+html {
+	width: 100%;
+	min-height: 100%;
+}
+
+html {
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+a[href^="tel"]{
+	color:inherit;
+	text-decoration:none;
+}
+
+.clearfix:after {
+	content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.hidden {
+	display:none;
+}
