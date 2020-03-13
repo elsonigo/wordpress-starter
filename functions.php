@@ -16,7 +16,11 @@ function enqueue_styles_and_scripts() {
 
 add_action('wp_enqueue_scripts', 'enqueue_styles_and_scripts');
 
-
+//remove gutenberg css library
+function wpassist_remove_block_library_css(){
+    wp_dequeue_style( 'wp-block-library' );
+} 
+add_action( 'wp_enqueue_scripts', 'wpassist_remove_block_library_css' );
 
 // WordPress Titles
 add_theme_support('title-tag');
