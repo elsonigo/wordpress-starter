@@ -1,6 +1,8 @@
 let mix = require("laravel-mix");
-require('dotenv').config();
-require('laravel-mix-purgecss');
+const tailwindcss = require("tailwindcss");
+require("dotenv").config();
+require("laravel-mix-purgecss");
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -13,16 +15,21 @@ require('laravel-mix-purgecss');
  */
 
 mix.browserSync({
-    proxy: process.env.LOCALPROXY,
-    files: ['dist/app.css', 'dist/app.js', '**/*.php'],
-    watch: true
+  proxy: process.env.LOCALPROXY,
+  files: ["dist/app.css", "dist/app.js", "**/*.php"],
+  watch: true
 });
 
-mix.js("src/js/app.js", "dist/")
-.sass("src/css/app.scss", "dist/")
-.purgeCss({
-    content: ['src/js/app.js', '**/*.php'],
-    css: ['src/css/app.scss']
+mix
+  .js("src/js/app.js", "dist/")
+  .sass("src/css/app.scss", "dist/")
+  .options({
+    processCssUrls: false,
+    postCss: [tailwindcss("tailwind.config.js")]
+  })
+  .purgeCss({
+    content: ["src/js/app.js", "**/*.php"],
+    css: ["src/css/app.scss"]
   });
 
 // Full API

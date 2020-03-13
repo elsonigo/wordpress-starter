@@ -1,11 +1,4 @@
 @import "base.css";
-
-$color: orange;
-
-body {
-    background-color: lightblue;
-}
-
-.dummy {
-    color: gray;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
