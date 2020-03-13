@@ -1,5 +1,7 @@
 @import "base.css";
 
+$color: lightblue;
+
 body {
-    background-color: lightblue;
+    background-color: $color;
 }
