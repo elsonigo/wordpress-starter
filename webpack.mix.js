@@ -1,5 +1,5 @@
 let mix = require("laravel-mix");
-
+require('dotenv').config();
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -12,7 +12,7 @@ let mix = require("laravel-mix");
  */
 
 mix.browserSync({
-    proxy: 'template.local',
+    proxy: process.env.LOCALPROXY,
     files: ['dist/app.css', 'dist/app.js', '**/*.php'],
     watch: true
 });
