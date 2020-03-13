@@ -138,3 +138,9 @@ base.client = function () {
 		setFullscreenMode: setFullscreenMode
 	};
 }();
+
+const testArrowFunction = () => {
+	console.log("hoi");
+}
+
+testArrowFunction();

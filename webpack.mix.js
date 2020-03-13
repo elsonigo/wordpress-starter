@@ -2,30 +2,27 @@ let mix = require("laravel-mix");
 const tailwindcss = require("tailwindcss");
 require("dotenv").config();
 require("laravel-mix-purgecss");
+require("laravel-mix-polyfill");
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for your application, as well as bundling up your JS files.
- |
- */
-
+// define the server ip where your php is running on in the .env file (docker/local/xampp etc.)
+// type 'npm run watch' for hot reloading server
 mix.browserSync({
   proxy: process.env.LOCALPROXY,
-  files: ["dist/app.css", "dist/app.js", "**/*.php"],
+  files: ["dist/app.css", "dist/app.js", "**/*.php", "**/*.js"],
   watch: true
 });
 
+// mix adds tailwind, preprocesses sass, combines css, purges css and bundles/polyfills js
+// outputs two files in the dist folder, which are enqueued in the function.php
 mix
   .js("src/js/app.js", "dist/")
   .sass("src/css/app.scss", "dist/")
   .options({
     processCssUrls: false,
     postCss: [tailwindcss("tailwind.config.js")]
+  })
+  .polyfill({
+    enabled: true
   })
   .purgeCss({
     content: ["src/js/app.js", "**/*.php"],
