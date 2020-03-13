@@ -1,5 +1,6 @@
 let mix = require("laravel-mix");
 require('dotenv').config();
+require('laravel-mix-purgecss');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -17,7 +18,12 @@ mix.browserSync({
     watch: true
 });
 
-mix.js("src/js/app.js", "dist/").sass("src/css/app.scss", "dist/");
+mix.js("src/js/app.js", "dist/")
+.sass("src/css/app.scss", "dist/")
+.purgeCss({
+    content: ['src/js/app.js', '**/*.php'],
+    css: ['src/css/app.scss']
+  });
 
 // Full API
 // mix.js(src, output);
