@@ -1,9 +1,9 @@
 # wordpress template with laravel mix
 
-## create theme
+## clone theme
 
 ``` bash
-# clone github repo to your installed wordpress' /themes folder
+# clone repository to your installed wordpress' /themes folder
 $ git clone ...
 
 # install dependencies
@@ -13,11 +13,11 @@ $ npm install
 $ npm run dev
 
 # set up up hot-reloading server
-change ip adress of your server wordpress is running on in the .env file (local by flywheel/docker/etc.)
+change IP address where wordpress is running on within the .env file (local by flywheel/docker/etc.)
 
 # start dev server 
 $ npm run watch
 
-# generate production ready files
+# generate production ready files in /dist folder
 $ npm run prod
 ```
