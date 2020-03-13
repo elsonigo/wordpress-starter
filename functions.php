@@ -2,14 +2,9 @@
 
 // Add stylesheets and scripts
 function enqueue_styles_and_scripts() {
-	wp_enqueue_style('basecss', get_template_directory_uri() . '/base.css', array(), '1.0.0');
-	wp_enqueue_style('navcss', get_template_directory_uri() . '/nav.css', array(), '1.0.0');
-	wp_enqueue_style('stylecss', get_template_directory_uri() . '/style.css', array(), '1.0.0');
-	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', get_template_directory_uri() . '/jquery-3.4.1.min.js', array(), '3.4.1');
-	wp_enqueue_script('lazysizesjs', get_template_directory_uri() . '/lazysizes.min.js', array(), '5.0.0');
-	wp_enqueue_script('basejs', get_template_directory_uri() . '/base.js', array(), '1.0.0');
-	wp_enqueue_script('customjs', get_template_directory_uri() . '/custom.js', array(), '1.0.0');
+
+	wp_enqueue_style('stylecss', get_template_directory_uri() . '/dist/app.css', array(), '1.0.0');
+	wp_enqueue_script('appjs', get_template_directory_uri() . '/dist/app.js', array(), '1.0.0', true);
 	
 	/* load assets based on post type/template
 	if(get_post_type() == 'projekt' || basename(get_page_template()) == 'page-projekte.php') {
