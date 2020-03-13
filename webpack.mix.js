@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+let mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,9 +11,13 @@ let mix = require('laravel-mix');
  |
  */
 
-mix
-.js('src/js/app.js', 'dist/')
-.sass('src/css/app.scss', 'dist/');
+mix.browserSync({
+    proxy: 'template.local',
+    files: ['dist/app.css', 'dist/app.js', '**/*.php'],
+    watch: true
+});
+
+mix.js("src/js/app.js", "dist/").sass("src/css/app.scss", "dist/");
 
 // Full API
 // mix.js(src, output);
