@@ -1,4 +1,5 @@
 import "lazysizes";
+import 'alpinejs';
 
 // base namespace (use unique name for each project)
 var base = base || {};
