@@ -51,15 +51,5 @@
 			</div>
 		</nav>
 	</header>
-
+	
 	<main>
-
-
-		<!-- <header class="page-header">
-			<h1><a href="<?php bloginfo('wpurl'); ?>"><?= get_bloginfo('name'); ?></a></h1>
-			<nav class="main-nav">
-				<ul>
-					<?php wp_list_pages('&title_li='); ?>
-				</ul>
-			</nav>
-		</header> -->
