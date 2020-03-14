@@ -1,5 +1,9 @@
 import "lazysizes";
 import 'alpinejs';
+import Turbolinks from 'turbolinks';
+
+Turbolinks.start();
+
 
 // base namespace (use unique name for each project)
 var base = base || {};
