@@ -8,21 +8,22 @@
 	<?php wp_head(); ?>
 </head>
 
-<body>
-	<header class="border-t-4 border-blue-700 bg-white shadow-sm">
-		<nav class="container mx-auto px-4 flex items-center justify-between py-2">
-			<ul class="flex">
-				<li class="pr-8"><a href="<?php echo get_home_url(); ?>">Home</a></li>
-				<li class="pr-8"><a href="<?php echo get_home_url(); ?>/sample-page">Sample Page</a></li>
+<body class="flex flex-col min-h-screen">
+	<header class="fixed w-screen right-0 bottom-0 border-t-4 border-blue-700 bg-white shadow-md sm:static sm:container sm:mx-auto">
+		<nav class="mx-auto px-2 flex items-center justify-between py-2">
+			<ul class="flex order-2 sm:order-1">
+				<li class="pr-4 sm:pr-8"><a href="<?php echo get_home_url(); ?>">Home</a></li>
+				<li class="pr-4 sm:pr-8"><a href="<?php echo get_home_url(); ?>/sample-page">Sample Page</a></li>
+				<li class="pr-4 sm:pr-8"><a href="<?php echo get_home_url(); ?>/deux">Deux</a></li>
 			</ul>
-			<div class="relative" x-data="{ isOpen: false }">
+			<div class="relative order-1 sm:order-2" x-data="{ isOpen: false }">
 				<button class="flex items-center outline-none" @click="isOpen = !isOpen" @click.away="isOpen = false" @keydown.escape="isOpen = false">
 					<img src="http://www.gravatar.com/avatar?d=mm" alt="avatar" class="w-8 h-8 rounded-full">
 					<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
 						<path d="M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z" class="heroicon-ui"></path>
 					</svg>
 				</button>
-				<ul x-show="isOpen" class="absolute font-normal bg-white shadow overflow-hidden rounded w-48 border mt-1 py-1 right-0 z-20">
+				<ul x-show="isOpen" class="absolute right-0 font-normal bg-white shadow overflow-hidden rounded w-48 border mt-1 py-1 z-20">
 					<li>
 						<a href="#" class="flex items-center px-3 py-3 hover:bg-gray-200">
 							<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="text-gray-600">
@@ -52,4 +53,4 @@
 		</nav>
 	</header>
 	
-	<main>
+	<main class="flex-1">
