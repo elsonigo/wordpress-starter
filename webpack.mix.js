@@ -9,7 +9,15 @@ require("laravel-mix-polyfill");
 mix.browserSync({
   proxy: process.env.LOCALPROXY,
   files: ["dist/app.css", "dist/app.js", "**/*.php", "**/*.js"],
-  watch: true
+  watch: true,
+  snippetOptions: {
+    rule: {
+      match: /<\/head>/i,
+      fn: function(snippet, match) {
+        return snippet + match;
+      }
+    }
+  }
 });
 
 // mix adds tailwind, preprocesses sass, combines css, purges css and bundles/polyfills js
