@@ -6,6 +6,7 @@ require("laravel-mix-polyfill");
 
 // define the server ip where your php is running on in the .env file (docker/local/xampp etc.)
 // type 'npm run watch' for hot reloading server
+// snippetOption puts browsersync script into header, so it works with turbolinks
 mix.browserSync({
   proxy: process.env.LOCALPROXY,
   files: ["dist/app.css", "dist/app.js", "**/*.php", "**/*.js"],
