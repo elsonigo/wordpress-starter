@@ -2541,18 +2541,18 @@ var base = base || {}; // client related functions
 base.client = function () {
   var tabletBreakpoint = 700;
   var desktopBreakpoint = 1100;
-  var deviceType = 'mobile';
+  var deviceType = "mobile";
 
   var isMobile = function isMobile() {
-    return deviceType === 'mobile';
+    return deviceType === "mobile";
   };
 
   var isTablet = function isTablet() {
-    return deviceType === 'tablet';
+    return deviceType === "tablet";
   };
 
   var isDesktop = function isDesktop() {
-    return deviceType === 'desktop';
+    return deviceType === "desktop";
   };
 
   var win = {
@@ -2561,11 +2561,11 @@ base.client = function () {
     widthWithoutScrollbar: 0,
     scrollbarWidth: 0
   };
-  var $html;
-  var $body; // removes nojs class from header
+  var html;
+  var body; // removes nojs class from header
 
-  document.documentElement.className = 'js';
-  document.addEventListener('DOMContentLoaded', function () {
+  document.documentElement.className = "js";
+  document.addEventListener("DOMContentLoaded", function () {
     init();
     deviceTypeDetection();
     windowResizeEvent();
@@ -2573,8 +2573,8 @@ base.client = function () {
   }, false);
 
   var init = function init() {
-    $html = document.querySelector('html');
-    $body = document.querySelector('body');
+    html = document.querySelector("html");
+    body = document.querySelector("body");
   };
 
   var deviceTypeDetection = function deviceTypeDetection() {
@@ -2584,37 +2584,37 @@ base.client = function () {
     win.widthWithoutScrollbar = window.innerWidth - win.scrollbarWidth;
 
     if (win.width < tabletBreakpoint) {
-      deviceType = 'mobile';
-      $body.classList.remove('tablet', 'desktop');
+      deviceType = "mobile";
+      body.classList.remove("tablet", "desktop");
     } else if (win.width >= tabletBreakpoint && win.width < desktopBreakpoint) {
-      deviceType = 'tablet';
-      $body.classList.remove('mobile', 'desktop');
+      deviceType = "tablet";
+      body.classList.remove("mobile", "desktop");
     } else if (win.width >= desktopBreakpoint) {
-      deviceType = 'desktop';
-      $body.classList.remove('tablet', 'desktop');
+      deviceType = "desktop";
+      body.classList.remove("tablet", "desktop");
     }
 
-    $body.classList.add(deviceType);
+    body.classList.add(deviceType);
 
     if (win.width > win.height) {
-      $body.classList.add('landscape');
-      $body.classList.remove('portrait');
+      body.classList.add("landscape");
+      body.classList.remove("portrait");
     } else {
-      $body.classList.add('portrait');
-      $body.classList.remove('landscape');
+      body.classList.add("portrait");
+      body.classList.remove("landscape");
     }
   };
 
   var windowResizeEvent = function windowResizeEvent() {
     window.onresize = function (e) {
-      var prevDeviceType = '';
+      var prevDeviceType = "";
 
-      if ($body.classList.contains('mobile')) {
-        prevDeviceType = 'mobile';
-      } else if ($body.classList.contains('tablet')) {
-        prevDeviceType = 'tablet';
-      } else if ($body.classList.contains('desktop')) {
-        prevDeviceType = 'desktop';
+      if (body.classList.contains("mobile")) {
+        prevDeviceType = "mobile";
+      } else if (body.classList.contains("tablet")) {
+        prevDeviceType = "tablet";
+      } else if (body.classList.contains("desktop")) {
+        prevDeviceType = "desktop";
       }
 
       deviceTypeDetection(); // reload page only if the resize causes switch betweeen mobile and desktop
@@ -2645,11 +2645,11 @@ base.client = function () {
 
   var setFullscreenMode = function setFullscreenMode(state) {
     if (state) {
-      $html.style.overflowY = 'hidden';
-      $html.style.paddingRight = win.scrollbarWidth + 'px';
+      html.style.overflowY = "hidden";
+      html.style.paddingRight = win.scrollbarWidth + "px";
     } else {
-      $html.style.overflowY = 'scroll';
-      $html.style.paddingRight = 0;
+      html.style.overflowY = "scroll";
+      html.style.paddingRight = 0;
     }
   };
 
@@ -2663,7 +2663,7 @@ base.client = function () {
     win: win,
     setFullscreenMode: setFullscreenMode
   };
-}();
+};
 
 /***/ }),
 

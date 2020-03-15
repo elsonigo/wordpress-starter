@@ -14,7 +14,6 @@
 			<ul class="flex order-2 sm:order-1">
 				<li class="pr-4 sm:pr-8"><a href="<?php echo get_home_url(); ?>">Home</a></li>
 				<li class="pr-4 sm:pr-8"><a href="<?php echo get_home_url(); ?>/sample-page">Sample Page</a></li>
-				<li class="pr-4 sm:pr-8"><a href="<?php echo get_home_url(); ?>/deux">Deux</a></li>
 			</ul>
 			<div class="relative order-1 sm:order-2" x-data="{ isOpen: false }">
 				<button class="flex items-center outline-none" @click="isOpen = !isOpen" @click.away="isOpen = false" @keydown.escape="isOpen = false">
