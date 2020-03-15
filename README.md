@@ -1,14 +1,10 @@
 # wordpress template with laravel mix
 
-This is (for now) a theme boilerplate for WordPress
-
 ## set up local wordpress server
 
-gotta do what you gotta do
-
-### add boilerplate theme 
+### add wordpress-starter theme
 ``` bash
-# clone repository to your installed wordpress' /themes folder
+# change directory into your installed wordpress' /themes folder and clone repo
 $ git clone https://github.com/elsonigo/wordpress-starter.git
 
 # install dependencies
