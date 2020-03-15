@@ -2665,6 +2665,8 @@ base.client = function () {
   };
 };
 
+base.client();
+
 /***/ }),
 
 /***/ 0:

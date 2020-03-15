@@ -143,3 +143,5 @@ base.client = function() {
     setFullscreenMode: setFullscreenMode
   };
 };
+
+base.client();
