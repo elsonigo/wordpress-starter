@@ -1,10 +1,15 @@
 # wordpress template with laravel mix
 
-## clone theme
+This is (for now) a theme boilerplate for WordPress
 
+## set up local wordpress server
+
+gotta do what you gotta do
+
+### add boilerplate theme 
 ``` bash
 # clone repository to your installed wordpress' /themes folder
-$ git clone ...
+$ git clone https://github.com/elsonigo/wordpress-starter.git
 
 # install dependencies
 $ npm install
@@ -12,8 +17,10 @@ $ npm install
 # create files in development mode
 $ npm run dev
 
-# set up up hot-reloading server
-change IP address where wordpress is running on within the .env file (local by flywheel/docker/etc.)
+# select theme in WordPress
+
+# set up hot-reloading server
+change proxy address within the .env file
 
 # start dev server 
 $ npm run watch
