@@ -17,14 +17,14 @@ function enqueue_styles_and_scripts()
 
 add_action('wp_enqueue_scripts', 'enqueue_styles_and_scripts');
 
-// defer js parsing
-function defer_parsing_of_js($url) {
-	if (FALSE === strpos($url, '.js')) return $url;
-	if (strpos($url, 'jquery.js')) return $url;
-	return "$url defer";
+// defer javascript
+function add_defer_attribute($tag, $handle) {
+    if ( 'appjs' !== $handle )
+        return $tag;
+    return str_replace( ' src', ' defer="defer" src', $tag );
 }
 
-add_filter('clean_url', 'defer_parsing_of_js', 11, 1);
+add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);
 
 //remove gutenberg css library
 function wpassist_remove_block_library_css()
