@@ -1,15 +1,22 @@
 let mix = require("laravel-mix");
 const tailwindcss = require("tailwindcss");
-require("dotenv").config();
 require("laravel-mix-purgecss");
 require("laravel-mix-polyfill");
+require("dotenv").config();
+
+let pathToTheme = "wp-content/themes/wp-template";
 
 // define the server ip where your php is running on in the .env file (docker/local/xampp etc.)
 // type 'npm run watch' for hot reloading server
 // snippetOption puts browsersync script into header, so it works with turbolinks
 mix.browserSync({
   proxy: process.env.LOCALPROXY,
-  files: ["wp-content/themes/wp-template/dist/app.css", "wp-content/themes/wp-template/dist/app.js", "wp-content/themes/wp-template/**/*.php", "wp-content/themes/wp-template/**/*.js"],
+  files: [
+    `${pathToTheme}/dist/app.css`,
+    `${pathToTheme}/dist/app.js`,
+    `${pathToTheme}/**/*.php`,
+    `${pathToTheme}/**/*.js`
+  ],
   watch: true,
   snippetOptions: {
     rule: {
@@ -18,14 +25,17 @@ mix.browserSync({
         return snippet + match;
       }
     }
+  },
+  socket: {
+    domain: "localhost:3000"
   }
 });
 
 // mix adds tailwind, preprocesses sass, combines css, purges css and bundles/polyfills js
 // outputs two files in the dist folder, which are enqueued in the functions.php
 mix
-  .js("src/js/app.js", "wp-content/themes/wp-template/dist/")
-  .sass("src/css/app.scss", "wp-content/themes/wp-template/dist/")
+  .js("src/js/app.js", `${pathToTheme}/dist/`)
+  .sass("src/css/app.scss", `${pathToTheme}/dist/`)
   .options({
     processCssUrls: false,
     postCss: [tailwindcss("tailwind.config.js")]
@@ -34,7 +44,7 @@ mix
     enabled: true
   })
   .purgeCss({
-    content: ["src/js/app.js", "wp-content/themes/wp-template/**/*.php"],
+    content: ["src/js/app.js", `${pathToTheme}**/*.php`],
     css: ["src/css/app.scss"]
   });
 
