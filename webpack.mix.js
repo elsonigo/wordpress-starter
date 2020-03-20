@@ -4,7 +4,8 @@ require("laravel-mix-purgecss");
 require("laravel-mix-polyfill");
 require("dotenv").config();
 
-let pathToTheme = "wp-content/themes/wp-template";
+let themeName = "wp-template";
+let pathToTheme = `wp-content/themes/${themeName}`;
 
 // define the server ip where your php is running on in the .env file (docker/local/xampp etc.)
 // type 'npm run watch' for hot reloading server
@@ -47,6 +48,10 @@ mix
     content: ["src/js/app.js", `${pathToTheme}**/*.php`],
     css: ["src/css/app.scss"]
   });
+
+if (mix.inProduction()) {
+  mix.copyDirectory(`${pathToTheme}`, `deploy/`);
+}
 
 // Full API
 // mix.js(src, output);
