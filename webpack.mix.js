@@ -9,7 +9,7 @@ require("laravel-mix-polyfill");
 // snippetOption puts browsersync script into header, so it works with turbolinks
 mix.browserSync({
   proxy: process.env.LOCALPROXY,
-  files: ["dist/app.css", "dist/app.js", "**/*.php", "**/*.js"],
+  files: ["wp-content/themes/wp-template/dist/app.css", "wp-content/themes/wp-template/dist/app.js", "wp-content/themes/wp-template/**/*.php", "wp-content/themes/wp-template/**/*.js"],
   watch: true,
   snippetOptions: {
     rule: {
@@ -24,8 +24,8 @@ mix.browserSync({
 // mix adds tailwind, preprocesses sass, combines css, purges css and bundles/polyfills js
 // outputs two files in the dist folder, which are enqueued in the functions.php
 mix
-  .js("src/js/app.js", "dist/")
-  .sass("src/css/app.scss", "dist/")
+  .js("src/js/app.js", "wp-content/themes/wp-template/dist/")
+  .sass("src/css/app.scss", "wp-content/themes/wp-template/dist/")
   .options({
     processCssUrls: false,
     postCss: [tailwindcss("tailwind.config.js")]
@@ -34,7 +34,7 @@ mix
     enabled: true
   })
   .purgeCss({
-    content: ["src/js/app.js", "**/*.php"],
+    content: ["src/js/app.js", "wp-content/themes/wp-template/**/*.php"],
     css: ["src/css/app.scss"]
   });
 

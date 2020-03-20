@@ -1,8 +1,17 @@
-<?php get_header(); ?>
+<?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
 
-<section class="p-2">
-	<h1 class="text-4xl">Frontpage</h1>
-	<p class="text-xl max-w-md">Content</p>
-</section>
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
 
-<?php get_footer(); ?>
+/** Loads the WordPress Environment and Template */
+require( dirname( __FILE__ ) . '/wp-blog-header.php' );
