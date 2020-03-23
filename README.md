@@ -7,6 +7,10 @@
 # clone repo into wordpress folder
 $ git clone https://github.com/elsonigo/wordpress-starter.git
 
+# change theme name in .gitignore file
+
+# change theme name in webpack.mix.js file
+
 # install dependencies
 $ npm install
 

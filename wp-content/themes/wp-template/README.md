@@ -4,7 +4,7 @@
 
 ### add wordpress-starter theme
 ``` bash
-# change directory into your installed wordpress' /themes folder and clone repo
+# change directory into your installed wordpress folder and clone repo
 $ git clone https://github.com/elsonigo/wordpress-starter.git
 
 # install dependencies
