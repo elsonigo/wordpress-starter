@@ -1,8 +1,14 @@
 import "lazysizes";
 import "alpinejs";
-import Turbolinks from "turbolinks";
+// import Turbolinks from "turbolinks";
+// Turbolinks.start();
+import Vue from 'vue';
+import Notification from './components/Notification.vue';
 
-Turbolinks.start();
+new Vue({
+    el: '#app',
+    components: { Notification }
+});
 
 // base namespace (use unique name for each project)
 var base = base || {};
