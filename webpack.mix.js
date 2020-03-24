@@ -45,7 +45,7 @@ mix
     enabled: true
   })
   .purgeCss({
-    content: ["src/js/app.js", "src/js/**/*.vue", `${pathToTheme}**/*.php`],
+    content: ["src/js/app.js", `${pathToTheme}**/*.php`],
     css: ["src/css/app.scss"]
   });
 

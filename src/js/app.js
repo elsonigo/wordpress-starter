@@ -1,20 +1,10 @@
 import "lazysizes";
 import "alpinejs";
-// import Turbolinks from "turbolinks";
-// Turbolinks.start();
-import Vue from 'vue';
-import Notification from './components/Notification.vue';
-
-new Vue({
-    el: '#app',
-    components: { Notification }
-});
-
-// base namespace (use unique name for each project)
-var base = base || {};
+import Turbolinks from "turbolinks";
+Turbolinks.start();
 
 // client related functions
-base.client = function() {
+var base = function() {
   var tabletBreakpoint = 700;
   var desktopBreakpoint = 1100;
   var deviceType = "mobile";
@@ -100,12 +90,14 @@ base.client = function() {
       }
 
       deviceTypeDetection();
-      // reload page only if the resize causes switch betweeen mobile and desktop
+      // reload page only if the resize causes switch between mobile and desktop
       if (deviceType !== prevDeviceType) {
         deviceSizeSwitchHappened();
       }
+
       win.width = window.innerWidth;
       win.height = window.innerHeight;
+    
       try {
         windowResized();
       } catch (e) {}
@@ -150,4 +142,4 @@ base.client = function() {
   };
 };
 
-base.client();
+base();

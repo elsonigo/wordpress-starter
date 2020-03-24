@@ -7,9 +7,6 @@
 	<p class="text-xl max-w-md">
 		Content
 	</p>
-	<div id="app" class="mt-4">
-		<Notification />
-	</div>
 </section>
 
 <?php get_footer(); ?>
