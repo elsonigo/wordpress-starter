@@ -7,9 +7,8 @@
 # clone repo into wordpress folder
 $ git clone https://github.com/elsonigo/wordpress-starter.git
 
-# change theme name in .gitignore file (line 52)
-
-# change theme name in webpack.mix.js file (line 7)
+# change theme name and local proxy url in .env file
+# change theme folder "wp-template" to your theme name
 
 # install dependencies
 $ npm install

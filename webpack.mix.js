@@ -4,9 +4,7 @@ require("laravel-mix-purgecss");
 require("laravel-mix-polyfill");
 require("dotenv").config();
 
-let themeName = "wp-template";
-let pathToTheme = `wp-content/themes/${themeName}`;
-
+let pathToTheme = `wp-content/themes/${process.env.THEME_NAME}`;
 // define the server ip where your php is running on in the .env file (docker/local/xampp etc.)
 // type 'npm run watch' for hot reloading server
 // snippetOption puts browsersync script into header, so it works with turbolinks
@@ -50,7 +48,7 @@ mix
   });
 
 if (mix.inProduction()) {
-  mix.copyDirectory(`${pathToTheme}`, `deploy/`);
+  mix.copyDirectory(`${pathToTheme}`, `${process.env.THEME_NAME}/`);
 }
 
 // Full API

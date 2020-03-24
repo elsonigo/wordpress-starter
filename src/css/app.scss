@@ -4,17 +4,23 @@
 
 // add custom sass below
 
-/* fonts */
-// @font-face {
-//     font-family: "GT America";
-//     src: url("../assets/fonts/GTAmerica-Regular.eot");
-//     src: url("../assets/fonts/GTAmerica-Regular.eot?#iefix")
-//         format("embedded-opentype"),
-//       url("../assets/fonts/GTAmerica-Regular.svg#GTAmerica-Regular") format("svg"),
-//       url("../assets/fonts/GTAmerica-Regular.ttf") format("truetype"),
-//       url("../assets/fonts/GTAmerica-Regular.woff") format("woff"),
-//       url("../assets/fonts/GTAmerica-Regular.woff2") format("woff2");
-//     font-weight: normal;
-//     font-style: normal;
-//     font-display: swap;
-//   }
+/* fonts example */
+@font-face {
+  font-family: "OpenSans";
+  src: url("../assets/fonts/OpenSans-Regular.ttf");
+//   src: url("../assets/fonts/OpenSans-Regular.eot?#iefix")
+//       format("embedded-opentype"),
+//     url("../assets/fonts/OpenSans-Regular.svg#GTAmerica-Regular") format("svg"),
+//     url("../assets/fonts/OpenSans-Regular.ttf") format("truetype"),
+//     url("../assets/fonts/OpenSans-Regular.woff") format("woff"),
+//     url("../assets/fonts/OpenSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+html {
+  font-family: "Raleway", "OpenSans", serif;
+}
