@@ -1,6 +1,7 @@
 import "lazysizes";
 import "alpinejs";
 import Turbolinks from "turbolinks";
+const R = require('ramda');
 Turbolinks.start();
 
 // client related functions
