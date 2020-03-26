@@ -33,6 +33,7 @@
 !tailwind.config.js
 !webpack.mix.js
 !src/
+!babel.config.js
 
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
