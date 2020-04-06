@@ -40,16 +40,19 @@ mix
     postCss: [tailwindcss("tailwind.config.js")]
   })
   .polyfill({
-    enabled: true
+    enabled: true,
+    useBuiltIns: "usage",
+    debug: true,
+    targets: { firefox: "50", ie: 11 }
   })
   .purgeCss({
     content: ["src/js/app.js", `${pathToTheme}**/*.php`],
     css: ["src/css/app.scss"]
   });
 
-if (mix.inProduction()) {
-  mix.copyDirectory(`${pathToTheme}`, `${process.env.THEME_NAME}/`);
-}
+// if (mix.inProduction()) {
+//   mix.copyDirectory(`${pathToTheme}`, `${process.env.THEME_NAME}/`);
+// }
 
 // Full API
 // mix.js(src, output);
